@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         accentColor: Color(0xffA9A9A9),
           ),
       routes: getAplicationPages(),
-      initialRoute: 'login',
+      initialRoute: 'usuarios',
     );
   }
 }

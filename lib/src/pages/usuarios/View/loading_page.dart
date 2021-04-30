@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class UsuarioPages extends StatelessWidget {
+class LoadingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold();
