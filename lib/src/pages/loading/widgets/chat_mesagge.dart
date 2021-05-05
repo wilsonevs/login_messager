@@ -19,7 +19,7 @@ class ChatMesagge extends StatelessWidget {
       child: SizeTransition(
       sizeFactor: CurvedAnimation(parent: animationController, curve: Curves.ease),
         child: Container(
-          child: this.uid == '123' ? _myMesagge(context) : _noMyMesagge(),
+          child: this.uid == '125' ? _myMesagge(context) : _noMyMesagge(),
         ),
       ),
     );

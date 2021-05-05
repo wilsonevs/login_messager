@@ -12,19 +12,27 @@ class LoginPages extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xffF2F2F2),
       body: SafeArea(
-        child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 40.0),
-            height: MediaQuery.of(context).size.height * 0.9,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Logo(image: 'assets/tag-logo.png', titulo: 'Login'),
-                FormLogin(),
-                Lables(title: 'Crear una ahora!',subtitle: '¿No tienes una cuenta?',ruta: 'register'),
-                Term(),
-              ],
+        child: GestureDetector(
+          onTap: () {
+            final FocusScopeNode focus = FocusScope.of(context);
+            if (!focus.hasPrimaryFocus && focus.hasFocus) {
+              FocusManager.instance.primaryFocus.unfocus();
+            }
+          },
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 40.0),
+              height: MediaQuery.of(context).size.height * 0.9,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Logo(image: 'assets/tag-logo.png', titulo: 'Login'),
+                  FormLogin(),
+                  Lables(title: 'Crear una ahora!',subtitle: '¿No tienes una cuenta?',ruta: 'register'),
+                  Term(),
+                ],
+              ),
             ),
           ),
         ),

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:chat/src/services/auth_services.dart';
+
 import 'package:chat/src/pages/loading/widgets/boton_azul.dart';
 import 'package:chat/src/pages/loading/widgets/custom_input.dart';
 
@@ -30,9 +33,12 @@ class FormLogin extends StatelessWidget {
               onPressd: () {
                 print(_emailcontroller.text);
                 print(_passcontroller.text);
+                final authService= Provider.of<AuthServices>(context, listen: false);
+                authService.login(_emailcontroller.text, _passcontroller.text);
               }),
         ],
       ),
     );
   }
 }
+
